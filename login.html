@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博授权登录中心</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            height: 400px;
+            align-items: center;
+        }
+        .login{
+            width: 80px;
+            height: 36px;
+            cursor:pointer
+        }
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <button class="login" onclick="confirm()">确认授权</button>
+    <button class="login" onclick="cancel()">取消</button>
+</div>
+
+</body>
+<script>
+    //确认授权
+    function confirm() {
+      window.location.href = 'autho.html?appid=1234567';//调转
+    }
+    //取消
+    function cancel() {
+        //关闭窗口
+        window.close();
+    }
+
+</script>
+</html>

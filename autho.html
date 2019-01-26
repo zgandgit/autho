@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>授权回调页面</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="main">
+ <h2>这里是授权回调</h2>
+</div>
+</body>
+<script>
+    $(function (e) {
+        let appid = GetQueryString('appid');
+        alert("你的appid为"+appid);
+        if(appid){
+            localStorage.setItem('autho',appid);//保存登录状态
+            window.close();
+        }
+    });
+
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+
+</script>
+</html>
